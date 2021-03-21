@@ -1,11 +1,9 @@
 import React from 'react'
-import { useForm } from 'react-hook-form';
 
-function Option({id, name, title, errors}) {
-    const {register} = useForm();
+function Option({register, id, name, title, errors}) {
     return(
         <label htmlFor={id}>
-            <input ref={register({required: true})} type="radio" id={id} name={name} value={id}/>
+            <input ref={register} type="radio" id={id} name={name} value={id}/>
             {title}
             {errors}
         </label>

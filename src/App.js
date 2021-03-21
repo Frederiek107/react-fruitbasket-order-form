@@ -22,6 +22,10 @@ function App() {
         setCounterAardbei(0);
         setCounterAppel(0);
         setCounterKiwi(0);
+        const elements = document.querySelectorAll("#articleButton");
+        for (const item of elements) {
+            item.style.setProperty("background-color", "white");
+        }
     }
 
     function onSubmit(data) {
@@ -113,14 +117,14 @@ function App() {
                     condition={errors.housenumber && <p>Dit veld is verplicht</p>}/>
 
                 Bezorgfrequentie:
-                <Option id="weekly" name="delivery" title="Iedere week"/>
-                <Option id="biweekly" name="delivery" title="Om de week"/>
-                <Option id="monthly" name="delivery" title="Iedere maand"/>
+                <Option register={register({required: true})} id="weekly" name="delivery" title="Iedere week"/>
+                <Option register={register({required: true})} id="biweekly" name="delivery" title="Om de week"/>
+                <Option register={register({required: true})} id="monthly" name="delivery" title="Iedere maand"/>
                 <label htmlFor="else">
                     <input ref={register({required: true})} type="radio" id="else" name="delivery" value="else"/>
                     Anders
-                    {errors.delivery && <p>Dit veld is verplicht</p>}
                 </label>
+                {errors.delivery && <p>Dit veld is verplicht</p>}
                 {selectedOption === "else" && (
                     <input
                         ref={register}

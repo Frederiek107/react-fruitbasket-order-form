@@ -54,18 +54,22 @@ input {
 
 .Bananen {
   border-color: gold;
+  background-color: white;
 }
 
 .Aardbeien {
   border-color: red;
+  background-color: white;
 }
 
 .Appels {
   border-color: lightgreen;
+  background-color: white;
 }
 
 .Kiwi {
   border-color: darkgreen;
+  background-color: white;
 }
 
 form button {
